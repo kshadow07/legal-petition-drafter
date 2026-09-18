@@ -1,0 +1,18 @@
+{
+  "name": "legal-petition-drafter",
+  "version": "0.1.0",
+  "description": "Private bilingual legal-drafting workflow for Jamshedpur district-court and Ranchi High Court practice.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Legal Petition Drafter",
+    "shortDescription": "Draft, review, and render bilingual legal documents.",
+    "longDescription": "Private workflow for approved templates, source-led legal research, bilingual Hindi/English drafting, and reviewable DOCX/PDF output. It never saves an uploaded document as a reusable template without explicit approval.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use Legal Petition Drafter to prepare a reviewable legal draft. Ask for missing case facts, use only approved templates, preserve the document language, and do not save anything as a reusable template unless I explicitly approve it."
+  }
+}
