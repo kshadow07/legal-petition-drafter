@@ -5,13 +5,19 @@ description: Prepare lawyer-reviewable petition drafts using approved templates 
 
 # Petition Drafter
 
+## Router dependency
+
+Always start from `../../AGENTS.md`. Use the router to load only the relevant skills and the matching approved template. Do not search through unrelated skills or template folders.
+
 ## Drafting sequence
 
-1. Confirm matter type, court, language, selected template, and requested output.
+1. Confirm matter type, court, jurisdiction, language, selected template, and requested output.
 2. Use the intake fact sheet and preserve names, dates, sections, case numbers, and quotations exactly as confirmed.
 3. Follow the approved template's heading, cause title, factual chronology, grounds, prayer, verification, and signature layout.
 4. Clearly identify unresolved facts and leave review markers rather than inventing text.
-5. Produce an editable draft before the final PDF.
+5. Run the routed quality-check workflow.
+6. Produce an editable draft before the final PDF.
+7. If no approved template exists, label the result as a first draft and do not imply that it follows the advocate's approved house format.
 
 ## Court context
 
