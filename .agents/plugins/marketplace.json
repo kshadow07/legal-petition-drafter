@@ -1,0 +1,20 @@
+{
+  "name": "legal-petition-drafter-marketplace",
+  "interface": {
+    "displayName": "Legal Petition Drafter"
+  },
+  "plugins": [
+    {
+      "name": "legal-petition-drafter",
+      "source": {
+        "source": "local",
+        "path": "./plugins/legal-petition-drafter"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
