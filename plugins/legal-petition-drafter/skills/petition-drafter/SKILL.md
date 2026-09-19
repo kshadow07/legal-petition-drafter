@@ -63,7 +63,8 @@ If an approved template specifies a different font, size, spacing, or typography
 
 If the user does not specify a style:
 - use the typography of the approved template;
-- if no approved template exists, use `Modern legal style` by default unless the surrounding conversation clearly indicates a traditional court-typist format.
+- if no approved template exists, use `Traditional style` by default;
+- use `Modern legal style` only when the user explicitly asks for a modern, clean, professional, or Times New Roman legal format.
 
 ## Review-first document workflow
 
