@@ -11,7 +11,7 @@ Always start from `../../AGENTS.md`. Use the router to load only the relevant sk
 
 ## Drafting sequence
 
-1. Confirm matter type, court, jurisdiction, language, selected template, and requested output.
+1. Confirm matter type, court, jurisdiction, language, selected template, requested output, and requested visual style.
 2. Use the intake fact sheet and preserve names, dates, sections, case numbers, and quotations exactly as confirmed.
 3. Follow the approved template's heading, cause title, factual chronology, grounds, prayer, verification, and signature layout.
 4. Clearly identify unresolved facts and leave review markers rather than inventing text.
@@ -21,6 +21,49 @@ Always start from `../../AGENTS.md`. Use the router to load only the relevant sk
 8. Preserve the document's current structure, formatting decisions, factual corrections, and drafting context across revisions in the same conversation. If the original DOCX is available, edit that file rather than reconstructing it from scratch.
 9. Generate the final court PDF only after the user indicates that the draft is approved or asks for a final PDF.
 10. If no approved template exists, label the result as a first draft and do not imply that it follows the advocate's approved house format.
+
+## Visual style switch
+
+Support two explicit presentation modes for court documents unless an approved template overrides them:
+
+### Traditional style
+Use when the user says phrases such as:
+- `traditional style`
+- `typewriter style`
+- `old court style`
+- `traditional Jamshedpur style`
+
+Default typography:
+- Font: `Courier New`
+- Size: `12 pt`
+- Monospaced appearance
+- Conservative court-typist layout
+- Avoid decorative formatting
+- Preserve conventional spacing, dotted party alignment, and restrained emphasis
+
+This mode is intended to approximate the traditional typewritten appearance often seen in district-court drafting. It is not to be described as an officially mandated court font unless an authoritative court rule or approved advocate template says so.
+
+### Modern legal style
+Use when the user says phrases such as:
+- `modern legal style`
+- `clean legal format`
+- `modern court draft`
+- `professional legal format`
+
+Default typography:
+- Font: `Times New Roman`
+- Size: `12 pt`
+- Conventional serif legal-document appearance
+- Clean spacing and alignment
+- Restrained bolding and underlining
+- No decorative or corporate styling
+
+### Priority rule
+If an approved template specifies a different font, size, spacing, or typography, the approved template takes priority over these defaults.
+
+If the user does not specify a style:
+- use the typography of the approved template;
+- if no approved template exists, use `Modern legal style` by default unless the surrounding conversation clearly indicates a traditional court-typist format.
 
 ## Review-first document workflow
 
@@ -34,7 +77,7 @@ For petitions and applications that are likely to require advocate review or mul
 6. After approval, run quality check and render the approved DOCX into the final PDF.
 7. Visually inspect the final PDF for page breaks, alignment, indentation, missing text, font/rendering issues, and signature/prayer placement before delivery.
 
-The editable draft is the source of truth for the current matter during the review cycle. The PDF is primarily the final presentation/f filing artifact.
+The editable draft is the source of truth for the current matter during the review cycle. The PDF is primarily the final presentation/filing artifact.
 
 ## Court drafting conventions learned from advocate review
 
