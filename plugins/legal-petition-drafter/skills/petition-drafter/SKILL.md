@@ -22,6 +22,17 @@ Always start from `../../AGENTS.md`. Use the router to load only the relevant sk
 9. Generate the final court PDF only after the user indicates that the draft is approved or asks for a final PDF.
 10. If no approved template exists, label the result as a first draft and do not imply that it follows the advocate's approved house format.
 
+## Minimal-change editing workflow
+
+Use this fast path for routine corrections, refinements, alignment fixes, font restoration, paragraph changes, or other limited edits to an existing legal document:
+
+1. Edit the existing DOCX directly. Do not reconstruct the document when the working DOCX is available.
+2. Change only what the user requested. Preserve all unrelated text, font, font size, margins, numbering, indentation, spacing, page setup, prayer placement, signature blocks, headers, footers, and page breaks.
+3. Treat the existing document as the style authority. Do not change typography or layout merely because another style appears cleaner.
+4. For a normal revision, update the DOCX once, export it once as a standard text-based PDF, visually inspect the rendered pages once, and deliver both files when requested.
+5. Repeat rendering only when the inspection shows a real defect. Do not expand a simple edit into redesign, font substitution, PDF flattening, or repeated conversion without a demonstrated need.
+6. Keep the PDF searchable and selectable. Use image-only or flattened PDF output only when the user requests it or when a confirmed technical defect cannot otherwise be resolved.
+
 ## Visual style switch
 
 Support two explicit presentation modes for court documents unless an approved template overrides them:
@@ -86,6 +97,7 @@ When the user confirms a recurring house-style convention, preserve it for later
 
 For Jamshedpur district-court drafting, confirmed conventions currently include:
 
+- Leave approximately a four-finger blank space at the top of the first page before the court heading, unless the approved template or the user directs otherwise. Apply this to new petitions, applications, written arguments, affidavits, and similar court documents.
 - In the prayer portion, do not automatically insert a separate heading titled `PRAYER` when the advocate's format does not use one.
 - The substantive prayer text may be set inward toward the right side of the page using an appropriate left indent, following the advocate's preferred court style.
 - The conventional closing line, for example, `And for this act of kindness, the petitioner as in duty bound shall ever pray.`, should return to the normal body alignment and should not inherit the prayer indentation.
