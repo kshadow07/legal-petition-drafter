@@ -13,6 +13,10 @@ description: Perform a pre-delivery factual, template, citation, and layout revi
 - No unresolved placeholders remain except those explicitly highlighted for advocate review.
 - Legal provisions and authorities are source-linked and not invented.
 - Prayer, verification, copies, signatures, and filing details match the approved format.
+- For the Jamshedpur house style, the first page retains approximately four-finger blank space above the court heading unless the template or user directs otherwise.
+- A prayer without a heading remains inset toward the right, while the conventional closing line returns to normal body alignment.
+- A limited revision changes only the requested items and preserves all unrelated formatting.
+- The final PDF is normally text-based, searchable, and selectable rather than flattened into page images.
 - Hindi text is rendered as readable Devanagari in the visual PDF check.
 
 ## Result format
