@@ -9,6 +9,15 @@ description: Produce reviewable, court-ready bilingual document outputs and visu
 
 Generate an editable source document and a PDF only after the advocate approves the draft text.
 
+## Standard conversion workflow
+
+1. Use the approved or corrected DOCX as the source of truth.
+2. For a simple revision, preserve every unrequested formatting choice and export the updated DOCX directly to PDF.
+3. Produce a normal text-based PDF with searchable and selectable text. Do not flatten pages into images unless the user explicitly requests it or a confirmed rendering defect requires it.
+4. Perform one focused visual check of every page. Re-export only when that check reveals an actual defect.
+5. Preserve the approximately four-finger blank space above the court heading on the first page when required by the Jamshedpur house style.
+6. Preserve a right-inset prayer without a separate prayer heading when that convention is selected, and return the conventional closing line to the normal body alignment.
+
 ## Hindi requirements
 
 - Use Unicode Devanagari text.
