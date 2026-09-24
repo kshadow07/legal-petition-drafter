@@ -40,7 +40,8 @@ This is the first and authoritative entry point for ChatGPT and Codex when using
 
 Unless the user or an approved template requires otherwise:
 
-- Use Courier New for the traditional court-document style.
+- Use Times New Roman, 12 pt, as the default court-document typography unless the user or an approved template requires otherwise.
+- If the user explicitly requests `traditional style`, `typewriter style`, or `old court style`, use Courier New, 12 pt.
 - Leave approximately a four-finger blank space at the top of the first page for court use or signature.
 - Place the prayer text toward the right side without a separate `Prayer` heading.
 - Return the conventional closing line to normal document alignment after the prayer.
