@@ -9,7 +9,7 @@ Read this file once per task, then only the needed skill. Reuse files already re
 | --- | --- |
 | Hindi draft or Hindi PDF | `skills/hindi-document/SKILL.md` |
 | English draft or substantive revision | `skills/petition-drafter/SKILL.md` |
-| Read handwritten/image case records | Add `skills/intake-and-ocr/SKILL.md` |
+| Attached case-document pages, including handwriting/images/scans | Read `skills/intake-and-ocr/SKILL.md` before drafting; then the selected language skill |
 | Mechanical edit | Existing editable source; load only the language skill if needed; skip unrelated evidence and research |
 | Current law or citations required | Add `skills/legal-research/SKILL.md` |
 | Manage reusable templates | `skills/template-manager/SKILL.md` |
@@ -26,7 +26,7 @@ Read this file once per task, then only the needed skill. Reuse files already re
 - PDF-first: when a PDF is requested, produce it in the same turn without a DOCX-first approval cycle. Retain an editable source; provide DOCX only when asked. Text approval is not a prerequisite for providing a review PDF.
 
 ## Accuracy and speed
-- Read all relevant supplied pages directly with native vision. No external OCR unless explicitly requested. Keep separate matters separate; examples control style, not new-case facts.
+- Read all attached pages of the current matter directly using native image understanding before drafting; follow `skills/intake-and-ocr/SKILL.md`. Verify critical fields against visible source lines, preserve negations and relationships, and flag unclear details instead of guessing. No external OCR unless explicitly requested. Keep separate matters separate; examples control style, not new-case facts.
 - Verify critical names, relationships, numbers, dates, amounts and relief against source pages. Crop/zoom only ambiguous regions. Do not guess; ask only material unresolved questions.
 - Improve Hindi grammar without changing facts, allegations, certainty or requested relief. Do not add unprovided facts such as lack of partition.
 - Execute the known renderer directly. Do not run routine package/version/font inventories, browse for fonts or compare PDF engines. Reuse successful setup in the same environment. Repair only an actual missing dependency or rendering failure; environments can reset.
