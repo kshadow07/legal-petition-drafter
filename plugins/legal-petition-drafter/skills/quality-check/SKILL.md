@@ -1,24 +1,12 @@
 ---
 name: quality-check
-description: Perform a pre-delivery factual, template, citation, and layout review of legal drafts.
+description: Perform one focused factual and visual review of a legal draft before delivery.
 ---
 
-# Quality Check
-
-## Review checklist
-
-- Correct court, jurisdiction, matter type, case/FIR number, police station, and party names.
-- Dates, chronology, ages, amounts, addresses, and annexure references agree with the fact sheet.
-- The selected template is approved and appropriate for the requested matter.
-- No unresolved placeholders remain except those explicitly highlighted for advocate review.
-- Legal provisions and authorities are source-linked and not invented.
-- Prayer, verification, copies, signatures, and filing details match the approved format.
-- For the Jamshedpur house style, the first page retains approximately four-finger blank space above the court heading unless the template or user directs otherwise.
-- A prayer without a heading remains inset toward the right, while the conventional closing line returns to normal body alignment.
-- A limited revision changes only the requested items and preserves all unrelated formatting.
-- The final PDF is normally text-based, searchable, and selectable rather than flattened into page images.
-- Hindi text is rendered as readable Devanagari in the visual PDF check.
-
-## Result format
-
-Return `ready for advocate review`, `needs factual confirmation`, or `needs template/legal review`. Never label a draft as ready to file without an advocate's explicit approval.
+Follow the defaults in `../../AGENTS.md`; do not repeat checks already completed in this task.
+- Compare names, relationships, numbers, addresses, dates, areas, amounts and relief against the current matter's sources. Style references must not supply facts.
+- Check natural Hindi grammar, spelling, consistent party references and unchanged certainty. Do not silently repair ambiguous names or merge conflicting areas.
+- Verify authorities when used; bold citations in arguments.
+- Check A4, language-specific font, first-page-only 45 mm petition gap (unless overridden), later-page 25 mm margin, prayer and closing alignment, restrained emphasis and signature placement.
+- Inspect all PDF pages once for actual broken glyphs, clipping, overlap and undesirable splitting. Text extraction artifacts alone do not prove visual corruption.
+- Report unresolved material facts plainly. A populated form is not proof of correctness. Do not delay a requested review PDF for a generic approval step.

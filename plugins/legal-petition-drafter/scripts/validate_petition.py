@@ -16,7 +16,7 @@ def main() -> None:
     data = json.loads(args.draft_json.read_text(encoding="utf-8"))
     missing = [field for field in REQUIRED_FIELDS if not data.get(field)]
     result = {
-        "status": "needs factual confirmation" if missing else "ready for advocate review",
+        "status": "needs factual confirmation" if missing else "basic fields present; source and visual review still required",
         "missing_required_fields": missing,
         "notice": "This validation does not establish legal correctness or filing readiness.",
     }

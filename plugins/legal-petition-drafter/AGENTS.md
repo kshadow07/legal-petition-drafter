@@ -1,83 +1,38 @@
-# Legal Petition Drafter Router
+# Legal Petition Drafter: start here
 
-This is the first and authoritative entry point for ChatGPT and Codex when using this plugin.
+Default practice: the user's father works at Jamshedpur district court, East Singhbhum, Jharkhand. Use this context without asking again; never infer a particular judge, case number, or jurisdiction against the supplied records.
 
-## Core operating rules
+## Routes
+Read this file once per task, then only the needed skill. Reuse files already read in the same task. Do not scan the repository or load every skill.
 
-1. Identify whether the user wants a simple edit, a substantive revision, a new draft, legal research, or final PDF generation.
-2. Read every PDF, image, DOCX, and note supplied for the current matter directly with native file and image understanding.
-3. Do not run external OCR for ordinary PDFs, scans, or photographs. If a page is genuinely unreadable, identify the exact file/page and ask for a clearer copy.
-4. Verify critical names, dates, case numbers, police-station details, statutory sections, amounts, and requested relief against the original page before relying on them.
-5. Never invent facts, authorities, quotations, procedural history, or missing text.
-6. Load only the skills and approved template needed for the identified route.
+| Request | Load next |
+| --- | --- |
+| Hindi draft or Hindi PDF | `skills/hindi-document/SKILL.md` |
+| English draft or substantive revision | `skills/petition-drafter/SKILL.md` |
+| Read handwritten/image case records | Add `skills/intake-and-ocr/SKILL.md` |
+| Mechanical edit | Existing editable source; load only the language skill if needed; skip unrelated evidence and research |
+| Current law or citations required | Add `skills/legal-research/SKILL.md` |
+| Manage reusable templates | `skills/template-manager/SKILL.md` |
+| PDF export or layout issue | `skills/court-pdf-generator/SKILL.md` |
 
-## Routing table
+## Authoritative defaults
+- Current user instructions override defaults and templates. For limited edits preserve unrelated established formatting.
+- English: Times New Roman, 12 pt. Courier New only when explicitly requested as traditional/typewriter style.
+- Hindi: approved Noto Sans Devanagari regular/bold with DejaVu Sans for Latin/digits, 11 pt, line-height 1.6. Use the bundled Hindi CSS and renderer. Do not substitute Noto Serif or apply English fonts to Hindi.
+- A4 portrait. Every new court petition/application/affidavit/written argument gets approximately three fingers of total blank space at the top of page ONE only. Use 45 mm as a reproducible approximation, not an official measurement. Later pages: 25 mm top margin. User can remove or change the gap.
+- Administrative `सेवा में` letters use the approved letter layout with normal 25 mm top margin unless the user requests the petition gap. This salutation does not by itself make a document an FIR.
+- No separate Prayer heading. Indent the whole prayer toward the right for court petitions; keep the conventional closing line at normal left alignment.
+- Bold verified case citations in arguments. Do not add a Conclusion heading when continuing numbered arguments. Write the case caption once.
+- PDF-first: when a PDF is requested, produce it in the same turn without a DOCX-first approval cycle. Retain an editable source; provide DOCX only when asked. Text approval is not a prerequisite for providing a review PDF.
 
-| User request | Skills to load | Execution route |
-|---|---|---|
-| Minor text, font, spacing, alignment, or formatting change to an existing document | `skills/petition-drafter/SKILL.md`, then `skills/quality-check/SKILL.md`; add `skills/court-pdf-generator/SKILL.md` only if PDF is requested | Use the existing editable document. Change only the requested items and preserve everything else. |
-| Substantive revision using supplied case records | `skills/intake-and-ocr/SKILL.md`, `skills/petition-drafter/SKILL.md`, `skills/quality-check/SKILL.md` | Read all relevant records directly, verify the fact sheet, and revise the existing draft without unnecessary redesign. |
-| New petition/application | `skills/intake-and-ocr/SKILL.md`, `skills/template-manager/SKILL.md`, `skills/petition-drafter/SKILL.md`, `skills/quality-check/SKILL.md` | Read all supplied records directly and load only the matching approved template. |
-| Anticipatory bail | New-draft route; add `skills/legal-research/SKILL.md` when current law or authorities are needed | `assets/templates/criminal/anticipatory-bail*.md` |
-| Regular bail | New-draft route; add legal research when needed | `assets/templates/criminal/regular-bail*.md` |
-| Criminal revision | New-draft route; add legal research when needed | `assets/templates/criminal/criminal-revision*.md` |
-| Writ petition | New-draft route plus `skills/legal-research/SKILL.md` | `assets/templates/high-court/writ-petition*.md` |
-| Police complaint or representation | Direct intake, template manager, petition drafter, and quality check | Matching approved complaint or representation template |
-| Legal research only | `skills/legal-research/SKILL.md` | No template unless drafting is also requested |
-| Final court PDF | `skills/court-pdf-generator/SKILL.md` plus the drafting skill already used | Preserve the selected approved template and existing layout |
-| Save or update a reusable template | `skills/template-manager/SKILL.md` | Act only on explicit instruction and remove confidential case-specific facts |
+## Accuracy and speed
+- Read all relevant supplied pages directly with native vision. No external OCR unless explicitly requested. Keep separate matters separate; examples control style, not new-case facts.
+- Verify critical names, relationships, numbers, dates, amounts and relief against source pages. Crop/zoom only ambiguous regions. Do not guess; ask only material unresolved questions.
+- Improve Hindi grammar without changing facts, allegations, certainty or requested relief. Do not add unprovided facts such as lack of partition.
+- Execute the known renderer directly. Do not run routine package/version/font inventories, browse for fonts or compare PDF engines. Reuse successful setup in the same environment. Repair only an actual missing dependency or rendering failure; environments can reset.
+- One focused factual/layout review, one render of all final pages. Re-render only to repair a visible defect. A successful script is not sufficient proof of readable text.
+- Do not file, sign, send or publish client documents without explicit authorization.
 
-## Fast path for simple edits
-
-1. Open the existing DOCX whenever available.
-2. Change only the text or formatting expressly requested.
-3. Preserve all unrelated wording, numbering, margins, page breaks, fonts, alignment, and advocate-specific styling.
-4. Do not re-read unrelated evidence or repeat legal research for a purely mechanical edit.
-5. Export a normal searchable and selectable PDF. Do not flatten the document into page images.
-6. Render and inspect once. Repeat only if an actual defect is found.
-
-## Default court-document formatting
-
-Unless the user or an approved template requires otherwise:
-
-- Use Times New Roman, 12 pt, as the default court-document typography unless the user or an approved template requires otherwise.
-- If the user explicitly requests `traditional style`, `typewriter style`, or `old court style`, use Courier New, 12 pt.
-- Leave approximately a four-finger blank space at the top of the first page for court use or signature.
-- Place the prayer text toward the right side without a separate `Prayer` heading.
-- Return the conventional closing line to normal document alignment after the prayer.
-- Keep the PDF text searchable and selectable.
-
-## Template selection rules
-
-1. GitHub is the source of truth for reusable drafting style and approved formats.
-2. Prefer an exact document-type match over a generic practice-area template.
-3. Match matter type, court, jurisdiction, and language.
-4. Use only templates whose status is `approved` for approved-format drafting.
-5. If no approved template exists, say so and create a clearly labelled first draft.
-6. Never treat ordinary uploaded case papers as reusable templates.
-7. Save or update a reusable template only on explicit instruction through the template-manager workflow.
-
-## Repository map
-
-- `skills/intake-and-ocr/SKILL.md` — read supplied records directly and build a verified fact sheet.
-- `skills/template-manager/SKILL.md` — select, propose, approve, version, and retire templates.
-- `skills/petition-drafter/SKILL.md` — draft or minimally edit the document.
-- `skills/legal-research/SKILL.md` — conduct source-led legal research and verify authorities.
-- `skills/quality-check/SKILL.md` — review facts, structure, citations, language, and layout.
-- `skills/court-pdf-generator/SKILL.md` — produce and verify the final editable document and PDF.
-- `assets/templates/` — advocate-approved reusable templates only.
-
-## Substantive drafting workflow
-
-1. Read this router.
-2. Determine the document type and whether the request is a simple edit or substantive drafting.
-3. Load only the routed skills and matching approved template.
-4. Read every supplied case record directly.
-5. Build and verify the fact sheet against the original pages.
-6. Ask only targeted questions whose answers would materially affect the draft.
-7. Research current law only when required.
-8. Draft or revise while preserving the approved format.
-9. Run one focused quality review.
-10. Produce the editable output and PDF when requested.
-
-Do not hunt through unrelated skills or template folders after the route has been resolved.
+## Available templates
+- Hindi administrative application/representation: `assets/templates/hindi/seva-mein-application.json` with `assets/styles/hindi.css`.
+- For other matter types use a supplied approved format or prepare a first draft. Do not search nonexistent template paths.

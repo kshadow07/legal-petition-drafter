@@ -1,6 +1,6 @@
 {
   "name": "legal-petition-drafter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Private bilingual legal-drafting workflow for Jamshedpur district-court and Ranchi High Court practice.",
   "author": {
     "name": "Local developer"
@@ -13,6 +13,6 @@
     "developerName": "Local developer",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "Use Legal Petition Drafter to prepare a reviewable legal draft. Ask for missing case facts, use only approved templates, preserve the document language, and do not save anything as a reusable template unless I explicitly approve it."
+    "defaultPrompt": "Start with AGENTS.md. Use verified facts and the matching language skill. Generate requested PDFs directly; use the approved Hindi renderer or English Times New Roman. Court petitions use a three-finger gap on page one only."
   }
 }

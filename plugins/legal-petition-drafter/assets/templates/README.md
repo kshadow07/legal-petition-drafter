@@ -1,5 +1,5 @@
-# Approved Template Library
+# Approved layouts
 
-No template is approved at installation.
+- `hindi/seva-mein-application.json`: Hindi administrative application/representation, approved by the user on 2026-09-27; reusable style only, no client facts.
 
-Each approved template should include a version/date, language, jurisdiction, court, matter type, field list, and anonymized source reference. Never place an unredacted client document in this library.
+For other matter types, use supplied approved formats or a first draft. Do not invent a template inventory. Record template versions and anonymize client details.

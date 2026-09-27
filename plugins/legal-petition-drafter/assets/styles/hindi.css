@@ -1,0 +1,18 @@
+@font-face { font-family: 'Legal Hindi'; src: url('../fonts/NotoSansDevanagari-Regular.ttf'); font-weight: 400; }
+@font-face { font-family: 'Legal Hindi'; src: url('../fonts/NotoSansDevanagari-Bold.ttf'); font-weight: 700; }
+@page { size: A4 portrait; margin: 25mm 20mm 25mm 25mm; }
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: 'DejaVu Sans', 'Legal Hindi', sans-serif; font-size: 11pt; line-height: 1.6; color: #000; margin: 0; padding: 0; }
+.header { margin-bottom: 15px; }
+.subject { margin: 15px 0; font-weight: bold; text-align: justify; }
+.salutation { margin-bottom: 10px; }
+.content { text-align: justify; text-indent: 40px; margin-bottom: 12px; }
+.facts { margin-left: 15px; margin-bottom: 12px; text-align: justify; }
+p { orphans: 2; widows: 2; }
+.prayer { text-align: justify; text-indent: 40px; margin-top: 15px; margin-bottom: 25px; break-inside: avoid; }
+.petition .prayer { margin-left: 30mm; text-indent: 0; }
+.closing { margin-top: 15px; text-align: left; }
+.signatures { display: table; width: 100%; margin-top: 40px; break-inside: avoid; }
+.date-place { display: table-cell; width: 45%; vertical-align: top; }
+.sign-block { display: table-cell; width: 55%; text-align: left; vertical-align: top; }
+.copy-to { margin-top: 35px; font-size: 10.5pt; break-inside: avoid; }

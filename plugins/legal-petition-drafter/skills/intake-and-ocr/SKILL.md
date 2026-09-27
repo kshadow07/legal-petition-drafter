@@ -27,3 +27,10 @@ Read every supplied PDF, image, DOCX file, and note directly with native file an
 - Do not invent obscured words or silently fill gaps.
 - Do not convert a scanned signature, seal, or letterhead into a reusable asset.
 - Do not determine an offence, claim, limitation period, or legal strategy from document extraction alone.
+
+## Hindi handwriting and matter separation
+- Read the full page before drafting; re-view only ambiguous regions at larger scale. Rendering/cropping a page is not external OCR.
+- Record critical fields with file/page and the visible spelling or digits. A guess is not source-confirmed.
+- Separate literal reading from legal rewriting. Do not silently resolve variant names, area discrepancies or uncertain dates.
+- Keep separate matters separate. Never transfer names, ages or allegations from a style sample.
+- If the same sources were already read and the request is purely formatting, reuse the verified facts.

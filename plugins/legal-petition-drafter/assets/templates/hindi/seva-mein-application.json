@@ -1,0 +1,35 @@
+{
+  "template_id": "hindi-seva-mein-v1",
+  "version": "1.0",
+  "approved_date": "2026-09-27",
+  "status": "approved",
+  "language": "hi",
+  "jurisdiction": "Jharkhand; adapt recipient to source",
+  "court_level": "administrative office, not an FIR",
+  "matter_type": "application/representation",
+  "document_kind": "letter",
+  "recipient": [
+    "[पदनाम]",
+    "[कार्यालय]",
+    "[स्थान]"
+  ],
+  "subject": "[विषय]",
+  "salutation": "महोदय,",
+  "introduction": "[प्रार्थी का सत्यापित परिचय]",
+  "facts_heading": "प्रार्थी का कथन संक्षेप में निम्नवत है:",
+  "paragraphs": [
+    "[सत्यापित तथ्य]"
+  ],
+  "prayer_opening": "अतः श्रीमान से नम्र निवेदन है",
+  "prayer": "[मांगी गई राहत]",
+  "closing": "इसके लिए प्रार्थी आपका सदा आभारी रहेगा।",
+  "date": "....................",
+  "place": "[स्थान]",
+  "signoff": "भवदीय,",
+  "applicant_name": "[नाम]",
+  "applicant_details": [
+    "[पता]"
+  ],
+  "copies": [],
+  "emphasis": []
+}
