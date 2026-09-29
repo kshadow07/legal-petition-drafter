@@ -7,6 +7,7 @@ Read this file once per task, then only the needed skill. Reuse files already re
 
 | Request | Load next |
 | --- | --- |
+| Cause list, "course list", daily hearing schedule, or cause-list image from CSV/records | `skills/daily-cause-list/SKILL.md` (image-first; do not load petition skill) |
 | Hindi draft or Hindi PDF | `skills/hindi-document/SKILL.md` |
 | English petition or substantive revision | `skills/petition-drafter/SKILL.md` |
 | Family partition deed or related property instrument | `skills/family-partition-deed/SKILL.md`; use intake skill first for source pages |
@@ -17,6 +18,7 @@ Read this file once per task, then only the needed skill. Reuse files already re
 | PDF export or layout issue | `skills/court-pdf-generator/SKILL.md` |
 
 ## Authoritative defaults
+- Cause lists use the dedicated landscape table layout and date/record verification in `skills/daily-cause-list/SKILL.md`, not petition A4 portrait or first-page gap defaults. Output PNG by default, PDF only when requested.
 - Current user instructions override defaults and templates. For limited edits preserve unrelated established formatting.
 - English: **Times New Roman, 12 pt by default**. If that font is unavailable, **Tinos** is the approved Times-compatible fallback. Never default to Courier; use Courier New only if explicitly requested as typewriter/traditional Courier style. A request for the traditional deed layout means the Times-style deed layout unless the user asks for Courier.
 - Hindi: approved Noto Sans Devanagari regular/bold with DejaVu Sans for Latin/digits, 11 pt, line-height 1.6. Use bundled Hindi CSS and renderer. Do not apply English fonts to Hindi.
@@ -36,6 +38,7 @@ Read this file once per task, then only the needed skill. Reuse files already re
 - Do not file, sign, send or publish client documents without explicit authorization.
 
 ## Available templates
+- Cause-list layout and reusable visual prompt: `skills/daily-cause-list/SKILL.md`. User-provided CSV/case rows are the source of truth.
 - Hindi administrative application/representation: `assets/templates/hindi/seva-mein-application.json` with `assets/styles/hindi.css`.
 - Family partition deed: follow `skills/family-partition-deed/SKILL.md` for reusable structural guidance; a supplied deed/photo is not automatically an advocate-approved template.
 - For other matter types use a supplied approved format or prepare a first draft. Do not search nonexistent template paths.
