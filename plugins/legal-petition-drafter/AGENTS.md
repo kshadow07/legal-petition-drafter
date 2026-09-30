@@ -10,6 +10,7 @@ Read this file once per task, then only the needed skill. Reuse files already re
 | Cause list, "course list", daily hearing schedule, or cause-list image from CSV/records | `skills/daily-cause-list/SKILL.md` (image-first; do not load petition skill) |
 | Hindi draft or Hindi PDF | `skills/hindi-document/SKILL.md` |
 | English petition or substantive revision | `skills/petition-drafter/SKILL.md` |
+| Tenancy agreement, rent agreement, monthly tenancy, or kirayanama | `assets/templates/property/monthly-tenancy-english-v1.md`; use intake skill first for source pages |
 | Family partition deed or related property instrument | `skills/family-partition-deed/SKILL.md`; use intake skill first for source pages |
 | Attached case-document pages, including handwriting/images/scans | Read `skills/intake-and-ocr/SKILL.md` before drafting; then the selected language/document skill |
 | Mechanical edit | Existing editable source; load only the language/document skill if needed; skip unrelated evidence and research |
@@ -19,6 +20,7 @@ Read this file once per task, then only the needed skill. Reuse files already re
 
 ## Authoritative defaults
 - Cause lists use the dedicated landscape table layout and date/record verification in `skills/daily-cause-list/SKILL.md`, not petition A4 portrait or first-page gap defaults. Output PNG by default, PDF only when requested.
+- Tenancy agreements follow `assets/templates/property/monthly-tenancy-english-v1.md`: preserve the current source language (English by default), use the approved Helvetica layout, and leave 200 pt (about 70.6 mm, four-to-five fingers) blank at the top of EVERY page. This is an explicit exception to petition-only first-page spacing and general English font defaults. Never assume Hindi or reuse example rent, dates or client details.
 - Current user instructions override defaults and templates. For limited edits preserve unrelated established formatting.
 - English: **Times New Roman, 12 pt by default**. If that font is unavailable, **Tinos** is the approved Times-compatible fallback. Never default to Courier; use Courier New only if explicitly requested as typewriter/traditional Courier style. A request for the traditional deed layout means the Times-style deed layout unless the user asks for Courier.
 - Hindi: approved Noto Sans Devanagari regular/bold with DejaVu Sans for Latin/digits, 11 pt, line-height 1.6. Use bundled Hindi CSS and renderer. Do not apply English fonts to Hindi.
@@ -38,6 +40,7 @@ Read this file once per task, then only the needed skill. Reuse files already re
 - Do not file, sign, send or publish client documents without explicit authorization.
 
 ## Available templates
+- Monthly tenancy agreement: `assets/templates/property/monthly-tenancy-english-v1.md`, user-approved 2026-09-30. Default format for tenancy/rent agreement requests; current-source facts and language control.
 - Cause-list layout and reusable visual prompt: `skills/daily-cause-list/SKILL.md`. User-provided CSV/case rows are the source of truth.
 - Hindi administrative application/representation: `assets/templates/hindi/seva-mein-application.json` with `assets/styles/hindi.css`.
 - Family partition deed: follow `skills/family-partition-deed/SKILL.md` for reusable structural guidance; a supplied deed/photo is not automatically an advocate-approved template.
