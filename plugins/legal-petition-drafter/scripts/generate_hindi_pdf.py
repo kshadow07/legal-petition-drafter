@@ -24,8 +24,9 @@ def render(data, output):
     if kind not in ('letter', 'petition'):
         raise ValueError('document_kind must be letter or petition')
     size = float(data.get('font_size_pt', 11))
-    top = float(data.get('first_page_top_mm', 45 if kind == 'petition' and data.get('first_page_gap', True) else 25))
-    if not 8 <= size <= 24 or not 10 <= top <= 100:
+    page_top = float(data.get('page_top_mm', 85))
+    top = float(data.get('first_page_top_mm', page_top))
+    if not 8 <= size <= 24 or not 10 <= top <= 100 or not 10 <= page_top <= 100:
         raise ValueError('Invalid font size or first-page margin')
     terms = sorted(set(x for x in data.get('emphasis', []) if x), key=len, reverse=True)
     pattern = re.compile('(' + '|'.join(map(re.escape, terms)) + ')') if terms else None
@@ -45,7 +46,7 @@ def render(data, output):
     greeting = '' if kind == 'petition' else '<strong>सेवा में,</strong><br>'
     source = f'''<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8">
 <link rel="stylesheet" href="{(ROOT/'assets/styles/hindi.css').as_uri()}">
-<style>@page :first {{ margin-top: {top}mm; }} body {{ font-size: {size}pt; }}</style></head>
+<style>@page {{ margin-top: {page_top}mm; }} @page :first {{ margin-top: {top}mm; }} body {{ font-size: {size}pt; }}</style></head>
 <body class="{kind}"><div class="header">{greeting}{recipient}</div>
 <div class="subject">{esc('विषय: ' if kind == 'letter' else '')}{esc(data['subject'])}</div>
 <div class="salutation"><strong>{esc(data.get('salutation', ''))}</strong></div>
@@ -68,7 +69,7 @@ if __name__ == '__main__':
     parser.add_argument('matter_json', type=Path)
     parser.add_argument('output_pdf', type=Path)
     parser.add_argument('--html', action='store_true', help='Input is structured court HTML, not the simple JSON layout')
-    parser.add_argument('--no-first-page-gap', action='store_true')
+    parser.add_argument('--no-first-page-gap', action='store_true', help='Explicitly reduce first-page top margin to 25 mm; continuation pages retain the saved default')
     args = parser.parse_args()
     if args.html:
         for weight in ('Regular', 'Bold'):
@@ -76,7 +77,7 @@ if __name__ == '__main__':
                 raise FileNotFoundError('Restore bundled Hindi fonts')
         args.output_pdf.parent.mkdir(parents=True, exist_ok=True)
         config = FontConfiguration()
-        HTML(filename=str(args.matter_json)).write_pdf(str(args.output_pdf), stylesheets=[CSS(filename=str(ROOT/'assets/styles/hindi.css'), font_config=config), CSS(string='@page :first { margin-top: ' + ('25' if args.no_first_page_gap else '45') + 'mm; }', font_config=config)], font_config=config)
+        HTML(filename=str(args.matter_json)).write_pdf(str(args.output_pdf), stylesheets=[CSS(filename=str(ROOT/'assets/styles/hindi.css'), font_config=config), CSS(string='@page :first { margin-top: ' + ('25' if args.no_first_page_gap else '85') + 'mm; }', font_config=config)], font_config=config)
         print(args.output_pdf)
         raise SystemExit(0)
     print(render(json.loads(args.matter_json.read_text(encoding='utf-8')), args.output_pdf))
