@@ -10,6 +10,7 @@ Read this file once per task, then only the needed skill. Reuse files already re
 | Cause list, "course list", daily hearing schedule, or cause-list image from CSV/records | `skills/daily-cause-list/SKILL.md` (image-first; do not load petition skill) |
 | Hindi draft or Hindi PDF | `skills/hindi-document/SKILL.md` |
 | English petition or substantive revision | `skills/petition-drafter/SKILL.md` |
+| Surrender-cum-bail petition | `assets/templates/criminal/surrender-cum-bail-petition.md` and `skills/petition-drafter/SKILL.md` |
 | Tenancy agreement, rent agreement, monthly tenancy, or kirayanama | `assets/templates/property/monthly-tenancy-english-v1.md`; use intake skill first for source pages |
 | Family partition deed or related property instrument | `skills/family-partition-deed/SKILL.md`; use intake skill first for source pages |
 | Attached case-document pages, including handwriting/images/scans | Read `skills/intake-and-ocr/SKILL.md` before drafting; then the selected language/document skill |
